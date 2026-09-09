@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Trabajo 1 Polimorfismo</title>
+</head>
+<body>
+    <h1>Resultados del Polimorfismo</h1>
+    <div th:each="res : ${resultados}">
+        <p th:utext="${res}"></p>
+    </div>
+</body>
+</html>
