@@ -47,7 +47,6 @@ public class ExperimentoController {
 
         List<String> resultados = new ArrayList<>();
 
-        // Iterar con polimorfismo como en las diapositivas usando ArrayList y for mejorado (foreach)
         int index = 0;
         for (InterfaceReina op : objetos) {
             Experimento expActual = experimentos.get(index);
