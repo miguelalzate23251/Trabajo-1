@@ -1,6 +1,7 @@
 package Ejercicio1.MiguelAlzate.modelo;
 
-public interface interface2 {
-    String ejecutar (Experimento e);
-}
+import java.util.List;
 
+public interface interface2 {
+    String ejecutar(List<Experimento> experimentos);
+}

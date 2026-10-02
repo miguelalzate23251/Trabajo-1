@@ -1,24 +1,51 @@
 package Ejercicio1.MiguelAlzate.modelo;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class CIENTIFICO implements InterfaceReina {
-    private Experimento experimento;
+    private String nombre;
+    private List<Experimento> experimentos;
 
-    public CIENTIFICO(Experimento experimento) {
-        this.experimento = experimento;
+    public CIENTIFICO(String nombre, List<Experimento> experimentos) {
+        this.nombre = nombre;
+        this.experimentos = experimentos;
     }
 
     @Override
-    public String formularHipotesis(Experimento e) {
-        return "El CIENTIFICO está formulando una hipótesis para el experimento: " + e.getNombre() + " de tipo " + e.getTipo();
+    public String getNombre() {
+        return nombre;
     }
 
     @Override
-    public String ejecutar(Experimento e) {
-        return "El CIENTIFICO está ejecutando el experimento: " + e.getNombre();
+    public List<Experimento> getExperimentos() {
+        return experimentos;
     }
 
     @Override
-    public String analizarResultados(Experimento e) {
-        return "El CIENTIFICO está analizando los resultados de: " + e.getNombre();
+    public String formularHipotesis(List<Experimento> exps) {
+        if (exps == null || exps.isEmpty()) {
+            return "El Científico " + nombre + " no tiene experimentos para formular hipótesis.";
+        }
+        String nombres = exps.stream().map(Experimento::getNombre).collect(Collectors.joining(", "));
+        return "El Científico " + nombre + " formula una hipótesis para los experimentos: [" + nombres + "]";
+    }
+
+    @Override
+    public String ejecutar(List<Experimento> exps) {
+        if (exps == null || exps.isEmpty()) {
+            return "El Científico " + nombre + " no tiene experimentos para ejecutar.";
+        }
+        String nombres = exps.stream().map(Experimento::getNombre).collect(Collectors.joining(", "));
+        return "El Científico " + nombre + " ejecuta los experimentos: [" + nombres + "]";
+    }
+
+    @Override
+    public String analizarResultados(List<Experimento> exps) {
+        if (exps == null || exps.isEmpty()) {
+            return "El Científico " + nombre + " no tiene experimentos para analizar.";
+        }
+        String nombres = exps.stream().map(Experimento::getNombre).collect(Collectors.joining(", "));
+        return "El Científico " + nombre + " analiza los resultados de los experimentos: [" + nombres + "]";
     }
 }

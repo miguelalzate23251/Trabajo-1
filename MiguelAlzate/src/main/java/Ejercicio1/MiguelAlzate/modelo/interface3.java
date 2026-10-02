@@ -1,6 +1,7 @@
 package Ejercicio1.MiguelAlzate.modelo;
 
-public interface interface3 {
-    String analizarResultados (Experimento e);
-}
+import java.util.List;
 
+public interface interface3 {
+    String analizarResultados(List<Experimento> experimentos);
+}

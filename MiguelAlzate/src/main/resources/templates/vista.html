@@ -2,12 +2,19 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Trabajo 1 Polimorfismo</title>
+    <title>Ces2 Version2</title>
 </head>
 <body>
-    <h1>Resultados del Polimorfismo</h1>
-    <div th:each="res : ${resultados}">
-        <p th:utext="${res}"></p>
-    </div>
+    <h1 th:text="${titulo}">Resultado</h1>
+
+    <p th:if="${resultadoCadena != null}" th:text="${resultadoCadena}"></p>
+
+    <ul th:if="${listaStrings != null}">
+        <li th:each="item : ${listaStrings}" th:text="${item}"></li>
+    </ul>
+
+    <br>
+    <hr>
+
 </body>
 </html>
