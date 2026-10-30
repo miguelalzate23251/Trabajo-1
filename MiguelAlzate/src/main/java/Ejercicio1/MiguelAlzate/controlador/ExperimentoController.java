@@ -34,12 +34,7 @@ public class ExperimentoController {
         return todos;
     }
 
-    @GetMapping("/")
-    public String inicio() {
-        return "redirect:/peticion1";
-    }
-
-    @GetMapping("/peticion1")
+    @GetMapping({"/trabajo2/peticion1", "/t2/peticion1"})
     public String peticion1(Model model) {
         List<InterfaceReina> objetos = obtenerTodosLosObjetos();
 
@@ -53,7 +48,7 @@ public class ExperimentoController {
         return "vista";
     }
 
-    @GetMapping("/peticion2")
+    @GetMapping({"/trabajo2/peticion2", "/t2/peticion2"})
     public String peticion2(Model model) {
         List<InterfaceReina> objetos = obtenerTodosLosObjetos();
 
@@ -73,7 +68,7 @@ public class ExperimentoController {
         return "vista";
     }
 
-    @GetMapping("/peticion3")
+    @GetMapping({"/trabajo2/peticion3", "/t2/peticion3"})
     public String peticion3(Model model) {
         List<InterfaceReina> objetos = obtenerTodosLosObjetos();
 
@@ -88,7 +83,7 @@ public class ExperimentoController {
         return "vista";
     }
 
-    @GetMapping("/peticion4")
+    @GetMapping({"/trabajo2/peticion4", "/t2/peticion4"})
     public String peticion4(Model model) {
         List<InterfaceReina> objetos = obtenerTodosLosObjetos();
 
@@ -123,7 +118,7 @@ public class ExperimentoController {
         return "vista";
     }
 
-    @GetMapping("/peticion5")
+    @GetMapping({"/trabajo2/peticion5", "/t2/peticion5"})
     public String peticion5(Model model) {
         List<InterfaceReina> objetos = obtenerTodosLosObjetos();
 

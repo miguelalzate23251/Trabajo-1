@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Trabajo 3 - Colecciones y Funciones</title>
+</head>
+<body>
+    <h1 th:text="${titulo}">Trabajo 3</h1>
+
+    <p th:if="${resultadoCadena != null}" th:text="${resultadoCadena}"></p>
+
+    <ul th:if="${listaStrings != null}">
+        <li th:each="item : ${listaStrings}" th:text="${item}"></li>
+    </ul>
+
+    <br>
+    <p>
+        <strong>Navegación Trabajo 3:</strong>
+        <a href="/peticion1">Petición 1</a> |
+        <a href="/peticion2">Petición 2</a> |
+        <a href="/peticion3">Petición 3</a> |
+        <a href="/peticion4">Petición 4</a> |
+        <a href="/peticion5">Petición 5</a>
+    </p>
+    <p>
+        <a href="/">← Menú Principal</a>
+    </p>
+</body>
+</html>
